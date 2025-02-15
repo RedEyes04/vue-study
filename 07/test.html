@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue的js文件/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 这里可以添加你的 Vue 组件或模板内容 -->
+         {{msg}}
+    </div>
+
+    <script>
+        const app = new Vue({
+            el:'#app', // 通过 el 配置选择器
+            data:{
+                // 在这里添加你的数据属性
+                msg:'hello'
+            }
+        })
+    </script>
+</body>
+</html>
