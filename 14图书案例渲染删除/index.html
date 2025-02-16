@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue的js文件/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 这里可以添加你的 Vue 组件或模板内容 -->
+        <h1>REDEYES的书架</h1>
+        <ul>
+            <li v-for="(item,index) in booklist">
+                <span>{{item.name}}</span>
+                <span>{{item.author}}</span>
+                <button @click="del(item.id)">删除</button>
+            </li>  
+
+        </ul>
+
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app', // 通过 el 配置选择器
+            data: {
+                // 在这里添加你的数据属性
+                booklist: [
+                    { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+                    { id: 2, name: '《西游记》', author: '吴承恩' },
+                    { id: 3, name: '《水浒传》', author: '施耐庵' },
+                    { id: 4, name: '《三国演义》', author: '罗贯中' }
+                ]
+
+            },
+            methods:{
+                del(index){
+                    // this.booklist = this.booklist.filter(item => item.id !=id)
+                    this.booklist.splice(index,1)
+                    // splice([开始的位置，如果为正数则从左边开始删除，负数反之]，[删除的个数])
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
